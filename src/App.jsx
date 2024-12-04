@@ -17,7 +17,7 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get(`http://localhost:3000/auth/me`, {
+        .get(`https://new-proj-jobb.onrender.com/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUser(res.data))

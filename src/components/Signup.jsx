@@ -15,7 +15,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:3000/signup`, formData);
+      await axios.post(`https://new-proj-jobb.onrender.com/signup`, formData);
       navigate('/login');
       toast.success("Signup Successfully");
     } catch (err) {

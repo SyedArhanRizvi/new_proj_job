@@ -19,7 +19,7 @@ console.log(logs);
           return;
         }
 
-        const res = await axios.get('http://localhost:3000/tasks', {
+        const res = await axios.get('https://new-proj-jobb.onrender.com/tasks', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
