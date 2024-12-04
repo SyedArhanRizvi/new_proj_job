@@ -9,7 +9,7 @@ import Signup from './components/Signup';
 
 // Auth Context
 export const AuthContext = React.createContext();
-
+//import.meta.env.VITE_API_BASE_URL
 function App() {
   const [user, setUser] = useState(null);
 
@@ -17,7 +17,7 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get(`https://new-proj-jobb.onrender.com/auth/me`, {
+        .get(`${import.meta.env.VITE_API_BASE_URL}/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUser(res.data))

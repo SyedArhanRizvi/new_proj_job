@@ -15,7 +15,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://new-proj-jobb.onrender.com/signup`, formData);
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, formData);
       navigate('/login');
       toast.success("Signup Successfully");
     } catch (err) {

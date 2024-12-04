@@ -11,7 +11,7 @@ const TaskManager = () => {
 
   // Fetch tasks and task history
   useEffect(() => {
-    axios.get("https://new-proj-jobb.onrender.com/tasks", {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/tasks`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -38,7 +38,7 @@ const TaskManager = () => {
       }
   
       // Include token in the headers
-      const res = await axios.post("https://new-proj-jobb.onrender.com/add-task", taskData, {
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/add-task`, taskData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -81,7 +81,7 @@ const TaskManager = () => {
       }
 
       const res = await axios.put(
-        `https://new-proj-jobb.onrender.com/update-task/${editingTask._id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/update-task/${editingTask._id}`,
         taskData,
         {
           headers: {
@@ -115,7 +115,7 @@ const TaskManager = () => {
         return;
       }
 
-      await axios.delete(`https://new-proj-jobb.onrender.com/delete-task/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/delete-task/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -131,7 +131,7 @@ const TaskManager = () => {
   const [logs, setLogs] = useState([]);
   useEffect(() => {
     axios
-      .get("https://new-proj-jobb.onrender.com/task-history", {
+      .get(`${import.meta.env.VITE_API_BASE_URL}/task-history`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

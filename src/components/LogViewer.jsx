@@ -19,7 +19,7 @@ console.log(logs);
           return;
         }
 
-        const res = await axios.get('https://new-proj-jobb.onrender.com/tasks', {
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/tasks`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
