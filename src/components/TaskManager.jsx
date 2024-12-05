@@ -51,10 +51,9 @@ const TaskManager = () => {
       setExecutionDate("");
       toast.success("Task Added Successfully");
   
-//       setTimeout(() => {
-//         window.location.reload();
-//         navigator("/");
-//       }, 1500);
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
     } catch (err) {
       console.error("Error adding task:", err.message);
       toast.error("Failed to add task");
