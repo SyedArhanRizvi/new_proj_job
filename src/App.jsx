@@ -86,19 +86,19 @@ function App() {
             <Route
               path="/"
               element={
-                user ? <TaskManager /> : <Navigate to="/login" replace />
+               <TaskManager /> 
               }
             />
             <Route
               path="/logs"
               element={
-                user ? <LogViewer /> : <Navigate to="/login" replace />
+                user ? <LogViewer /> : <Navigate to="/login" />
               }
             />
             <Route
               path="/chart"
               element={
-                user ? <FrequencyChart /> : <Navigate to="/login" replace />
+                user ? <FrequencyChart /> : <Navigate to="/login" />
               }
             />
             <Route path="/login" element={<Login />} />

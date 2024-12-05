@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router";
 
 const TaskManager = () => {
+    const navigator = useNavigate();
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState("");
   const [executionDate, setExecutionDate] = useState("");
@@ -51,6 +53,7 @@ const TaskManager = () => {
   
 //       setTimeout(() => {
 //         window.location.reload();
+//         navigator("/");
 //       }, 1500);
     } catch (err) {
       console.error("Error adding task:", err.message);
